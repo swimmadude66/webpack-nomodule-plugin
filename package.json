@@ -1,6 +1,6 @@
 {
   "name": "html-webpack-nomodule-plugin",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "a plugin for html-webpack-plugin to label certain chunks as legacy-only via the nomodule attribute",
   "main": "dist/plugin.js",
   "scripts": {

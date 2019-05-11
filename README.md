@@ -20,7 +20,7 @@ _Assigns the nodmodule attribute to script tags injected by [Html Webpack Plugin
             template: join(__dirname, './src/index.html'),
         }),
         new HtmlWebpackNoModulePlugin({
-            filePatterns: ['polyfill']
+            filePatterns: ['polyfill.**.js']
         })
     ]
 ```

@@ -119,7 +119,7 @@ describe('HtmlWebpackNoModulePlugin Production Mode', () => {
             plugins: [
                 new HtmlWebpackPlugin(HtmlWebpackPluginOptions),
                 new HtmlWebpackNoModulePlugin({
-                    filePatterns: ['polyfill.*.min.js']
+                    filePatterns: ['polyfill.**.js']
                 }),
             ]
         }, (err) => {

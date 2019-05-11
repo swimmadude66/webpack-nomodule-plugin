@@ -1,5 +1,5 @@
 {
-  "name": "html-webpack-nomodule-plugin",
+  "name": "webpack-nomodule-plugin",
   "version": "1.0.0",
   "description": "a plugin for html-webpack-plugin to label certain chunks as legacy-only via the nomodule attribute",
   "main": "dist/plugin.js",
@@ -41,10 +41,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/swimmadude66/html-webpack-nomodule-plugin.git"
+    "url": "git+https://github.com/swimmadude66/webpack-nomodule-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/swimmadude66/html-webpack-nomodule-plugin/issues"
+    "url": "https://github.com/swimmadude66/webpack-nomodule-plugin/issues"
   },
-  "homepage": "https://github.com/swimmadude66/html-webpack-nomodule-plugin#readme"
+  "homepage": "https://github.com/swimmadude66/webpack-nomodule-plugin#readme"
 }

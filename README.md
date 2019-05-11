@@ -1,14 +1,14 @@
-# Html Webpack Nomodule Plugin
+# Webpack Nomodule Plugin
 _Assigns the nodmodule attribute to script tags injected by [Html Webpack Plugin](https://github.com/jantimon/html-webpack-plugin)_
 
 ## Configuration
 
-1. Install via `npm i -D html-webpack-nomodule-plugin`
+1. Install via `npm i -D webpack-nomodule-plugin`
 1. Add to your webpack config AFTER HtmlWebpackPlugin
 ```javascript
-    var NoModulePlugin = require('html-webpack-nomodule-plugin').HtmlWebpackNoModulePlugin;
+    var NoModulePlugin = require('webpack-nomodule-plugin').WebpackNoModulePlugin;
     // OR for import style
-    import {HtmlWebpackNoModulePlugin} from 'html-webpack-nomodule-plugin'
+    import {WebpackNoModulePlugin} from 'webpack-nomodule-plugin'
     ...
     plugins: [
         new HtmlWebpackPlugin({
@@ -19,7 +19,7 @@ _Assigns the nodmodule attribute to script tags injected by [Html Webpack Plugin
             showErrors: false
             template: join(__dirname, './src/index.html'),
         }),
-        new HtmlWebpackNoModulePlugin({
+        new WebpackNoModulePlugin({
             filePatterns: ['polyfill.**.js']
         })
     ]

@@ -4,7 +4,7 @@ import {expect} from 'chai';
 import * as webpack from 'webpack';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as rimraf from 'rimraf';
-import {HtmlWebpackNoModulePlugin} from '../src/plugin';
+import {WebpackNoModulePlugin} from '../src/plugin';
 
 const OUTPUT_DIR = join(__dirname, './test_dist');
 
@@ -51,7 +51,7 @@ function getOutput(): string {
     return htmlContents;
 }
 
-describe('HtmlWebpackNoModulePlugin Development Mode', () => {
+describe('WebpackNoModulePlugin Development Mode', () => {
 
     afterEach((done) => {
         rimraf(OUTPUT_DIR, done);
@@ -61,7 +61,7 @@ describe('HtmlWebpackNoModulePlugin Development Mode', () => {
         webpack({ ...webpackDevOptions,
             plugins: [
                 new HtmlWebpackPlugin(HtmlWebpackPluginOptions),
-                new HtmlWebpackNoModulePlugin(),
+                new WebpackNoModulePlugin(),
             ]
         }, (err) => {
             expect(!!err).to.be.false;
@@ -76,7 +76,7 @@ describe('HtmlWebpackNoModulePlugin Development Mode', () => {
         webpack({ ...webpackDevOptions,
             plugins: [
                 new HtmlWebpackPlugin(HtmlWebpackPluginOptions),
-                new HtmlWebpackNoModulePlugin({
+                new WebpackNoModulePlugin({
                     filePatterns: ['polyfill\.js']
                 }),
             ]
@@ -93,7 +93,7 @@ describe('HtmlWebpackNoModulePlugin Development Mode', () => {
 });
 
 
-describe('HtmlWebpackNoModulePlugin Production Mode', () => {
+describe('WebpackNoModulePlugin Production Mode', () => {
 
     afterEach((done) => {
         rimraf(OUTPUT_DIR, done);
@@ -103,7 +103,7 @@ describe('HtmlWebpackNoModulePlugin Production Mode', () => {
         webpack({ ...webpackProdOptions,
             plugins: [
                 new HtmlWebpackPlugin(HtmlWebpackPluginOptions),
-                new HtmlWebpackNoModulePlugin(),
+                new WebpackNoModulePlugin(),
             ]
         }, (err) => {
             expect(!!err).to.be.false;
@@ -118,7 +118,7 @@ describe('HtmlWebpackNoModulePlugin Production Mode', () => {
         webpack({ ...webpackProdOptions,
             plugins: [
                 new HtmlWebpackPlugin(HtmlWebpackPluginOptions),
-                new HtmlWebpackNoModulePlugin({
+                new WebpackNoModulePlugin({
                     filePatterns: ['polyfill.**.js']
                 }),
             ]

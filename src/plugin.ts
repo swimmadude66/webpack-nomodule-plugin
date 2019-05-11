@@ -1,7 +1,7 @@
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as minimatch from 'minimatch';
 
-export class HtmlWebpackNoModulePlugin {
+export class WebpackNoModulePlugin {
 
     constructor(private _config: {filePatterns: string[]} = {filePatterns: []}) {
 

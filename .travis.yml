@@ -22,7 +22,7 @@ script:
 deploy:
   skip_cleanup: true
   on:
-    repo: steadyapp/html-webpack-link-type-plugin
+    repo: swimmadude66/webpack-nomodule-plugin
     node: "10"
     tags: true
     branch: master

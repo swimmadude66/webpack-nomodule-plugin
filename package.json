@@ -1,0 +1,50 @@
+{
+  "name": "html-webpack-nomodule-plugin",
+  "version": "0.0.0",
+  "description": "a plugin for html-webpack-plugin to label certain chunks as legacy-only via the nomodule attribute",
+  "main": "dist/plugin.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register spec/**/*.spec.ts --exit",
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "html-webpack-plugin",
+    "nomodule",
+    "polyfills",
+    "webpack",
+    "plugin"
+  ],
+  "author": "swimmadude66",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "4.1.7",
+    "@types/mocha": "5.2.6",
+    "@types/node": "8.10.29",
+    "@types/rimraf": "2.0.2",
+    "@types/webpack": "4.4.31",
+    "chai": "4.2.0",
+    "html-webpack-plugin": ">=3.2.0 || 4.0.0-beta.1 || 4.0.0-beta.2 || 4.0.0-beta.4 || 4.0.0-beta.5",
+    "mocha": "6.1.4",
+    "rimraf": "2.6.3",
+    "ts-node": "8.1.0",
+    "typescript": "3.4.5",
+    "webpack": ">=3.0.0"
+  },
+  "dependencies": {
+    "minimatch": "3.0.4"
+  },
+  "peerDependencies": {
+    "html-webpack-plugin": ">=3.0.0 || 4.0.0-beta.1 || 4.0.0-beta.2 || 4.0.0-beta.4 || 4.0.0-beta.5",
+    "webpack": ">=3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swimmadude66/html-webpack-nomodule-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/swimmadude66/html-webpack-nomodule-plugin/issues"
+  },
+  "homepage": "https://github.com/swimmadude66/html-webpack-nomodule-plugin#readme"
+}

@@ -1,0 +1,4 @@
+node_modules/
+dist/
+
+spec/test_dist

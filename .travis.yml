@@ -1,0 +1,33 @@
+language: node_js
+node_js:
+  - "8"
+  - "9"
+  - "10"
+  - "11"
+  - "12"
+
+env:
+  - WEBPACK_VERSION=4 HTML_PLUGIN_VERSION=3
+  - WEBPACK_VERSION=4 HTML_PLUGIN_VERSION=next
+
+install: 
+  - npm install
+  - npm install -D webpack@$WEBPACK_VERSION || true
+  - npm install -D html-webpack-plugin@$HTML_PLUGIN_VERSION || true
+
+script: 
+  - npm test
+  - npm run build
+
+deploy:
+  skip_cleanup: true
+  on:
+    repo: steadyapp/html-webpack-link-type-plugin
+    node: "10"
+    tags: true
+    branch: master
+    condition: env(WEBPACK_VERSION)=4 AND env(HTML_PLUGIN_VERSION)=3
+  provider: npm
+  email: "swimmadude66@gmail.com"
+  api_key: 
+    secure: "ZsZTUSst9qa/zD097Y4rR0471NCVd+tucFw0YoPERf8pqDWFbJfcBWf22iwSLIcpcr5FsN3b7kfrm+n+nT+WaV/w1yt9Th7ve68jia7/vybxdEsGYwgcle+CyEkI3zizWeHs+CiXLkEUvky3+DRF1mpVUG+JJ9oGL42+eTBt83yOl1Qp2KsODGKtAJaYMHNJa+hljKplMxTi3Hr14lyU8J6annynU88cABzNGIs3XqJ7HmMcJcbUToPZL/EpQ1TUi1qhKeTgjOV1aMdv9gPb/7M/5/1AmZnAorXEhopfifmIThYM5lU0/dWwbkHA3PElirF7pgmfAOu56PEqdQWlz+HwbK5ldP1+KlQB1uuHgop3J9x9vX0D/opiXT7M6WRbPnY1PXiQEEWcCMsDY/kbkoJMBNKx6xrxCK+TwmakmA+5h5eVtWo5DVylm1JMicSnRklaX2Y7j0osNA5VkynhRKs6qvyyzGu+H6iZQx9augdCUuKobdFGYb4NgjsMYOWKi+xxIp/GKVXaPUUGm92NP/jRV/WSfD3jVHh4oJt157JQ/bSUThRLMBD3eTRAGw3hWYtg+4OFWRToE1by5Xyzrz1dBlfjcG14TIsfjh/y5N8ALbkf9sPCeO20xc/9/FxEXSmTR9knL5nY1bMQCIBLYX/s1XRc3ykwSp8j4N9YIJA="

@@ -1,0 +1,7 @@
+src/
+spec/
+node_modules/
+.vscode/
+npm-debug.log
+tsconfig.json
+.travis.yml

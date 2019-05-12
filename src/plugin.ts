@@ -1,9 +1,14 @@
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as minimatch from 'minimatch';
 
+export type NoModuleConfig = {
+    filePatterns: string[];
+    // in case I want to add other optional configs later without breaking old uses
+}
+
 export class WebpackNoModulePlugin {
 
-    constructor(private _config: {filePatterns: string[]} = {filePatterns: []}) {
+    constructor(private _config: NoModuleConfig = {filePatterns: []}) {
 
     }
 
@@ -21,9 +26,9 @@ export class WebpackNoModulePlugin {
                             return cb(null, data);
                         }
                     )
-                } else if (HtmlWebpackPlugin && HtmlWebpackPlugin['getHooks']) {
+                } else if (HtmlWebpackPlugin && HtmlWebpackPlugin.getHooks) {
                     // html-webpack 4
-                    const hooks = (HtmlWebpackPlugin as any).getHooks(compilation);
+                    const hooks = HtmlWebpackPlugin.getHooks(compilation);
                     hooks.alterAssetTags.tapAsync(
                         'NoModulePlugin',
                         (data, cb) => {

@@ -1,5 +1,5 @@
 # Webpack Nomodule Plugin
-_Assigns the nodmodule attribute to script tags injected by [Html Webpack Plugin](https://github.com/jantimon/html-webpack-plugin)_
+_Assigns the `nomodule` attribute to script tags injected by [Html Webpack Plugin](https://github.com/jantimon/html-webpack-plugin)_
 
 ## Configuration
 

@@ -2,6 +2,7 @@ src/
 spec/
 node_modules/
 .vscode/
+.gitignore
 npm-debug.log
 tsconfig.json
 .travis.yml

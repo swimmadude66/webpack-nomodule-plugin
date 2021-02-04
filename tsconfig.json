@@ -12,7 +12,11 @@
       "lib": [
         "es6"
       ],
-      "types": []
+      "types": [
+        "node",
+        "mocha",
+        "chai"
+      ]
     },
     "exclude": [
         "node_modules/",

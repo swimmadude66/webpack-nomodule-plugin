@@ -6,15 +6,16 @@ node_js:
 
 env:
   - WEBPACK_VERSION=4 HTML_PLUGIN_VERSION=3
-  - WEBPACK_VERSION=4 HTML_PLUGIN_VERSION=next
-  # - WEBPACK_VERSION=5.0.0-alpha.12 HTML_PLUGIN_VERSION=next
+  - WEBPACK_VERSION=4 HTML_PLUGIN_VERSION=4
+  - WEBPACK_VERSION=4 HTML_PLUGIN_VERSION=5
+  - WEBPACK_VERSION=5 HTML_PLUGIN_VERSION=5
 
-install: 
+install:
   - npm install
   - npm install -D webpack@$WEBPACK_VERSION || true
   - npm install -D html-webpack-plugin@$HTML_PLUGIN_VERSION || true
 
-script: 
+script:
   - npm test
   - npm run build
 
@@ -28,5 +29,5 @@ deploy:
     if: env(WEBPACK_VERSION)=4 AND env(HTML_PLUGIN_VERSION)=3
   provider: npm
   email: "swimmadude66@gmail.com"
-  api_key: 
+  api_key:
     secure: "KLe0spEfJBgExBmnB4fAo6L8s9CclKFKU8rcnsNhbuGsJdqowkmcj4ahNf5lAm94Acral+ui2Ir+McAvfi5R6KIysNFnhEtMfMTQQ+1IwhRD6AfOGdEsjWFuLb9yVwAVSq5NSxa/G/fIW+0Zp/bWWiltURLjsWwJhtBbaij4/16Chu5VHZ5LX2TU5F1TJCjJqNQfh2pZH6Xh05j+FvaIaC0WIre3ZKpm0mdJJY241+dzynXw3ctVSHopR2WvzVyXbtR+/M/S4NfrgGwk0RV8KHfGjGbIxwpfuzbTvcPfQkbso6Y6ysy6EwWXbPt9qIQP7okVU8nSI7rq5m3pKlq94dKENkeEGCcOzBvKzmNHwsLPIYBbwhkQZ4ELe1OOFe+9mLih6QU4e+/nALsORF28vTFd4b5jzJq0i/Fpx6EleKqh0yeL9rVuD4KDAEdVDyqGMzIBkleS3nJE+Hs+7EQmL6UXuKUh1ttpHMNQ8zPaDmo4lMy8MYM3kKoUUxKxZ8GcjdgDJSqLMg2oR2KDu1HItXl/M4JzbjzRAf1+T3jwprpJgIJoq4nHLQHFpgH26T3Ue4UCCztHe6NIE0qD+OId8fI+QTUo3Ju+sng/oR4NUdTaW7SSrrB4ts2g5CX/2cuGBv2yWTjcfhjtDLLcYAnONJS5mhO7aAGi4F+3JCJArms="

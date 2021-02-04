@@ -1,17 +1,15 @@
 name: build-plugin
 on: [push, pull_request]
 jobs:
-  build:
+ build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        webpack: [5, 4]
-        html-webpack: [5, 4, 3]
-        exclude:
-          - webpack: 4
-            html-webpack: 5
+        webpack: [4]
+        html-webpack: [4, 3]
+        include:
           - webpack: 5
-            html-webpack: [3, 4]
+            html-webpack: 5
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1

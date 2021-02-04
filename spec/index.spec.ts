@@ -11,7 +11,7 @@ const OUTPUT_DIR = join(__dirname, './test_dist');
 const HtmlWebpackPluginOptions = {
     filename: 'index.html',
     hash: false,
-    inject: 'body',
+    inject: 'body' as 'body',
     minify: {
         collapseWhitespace: true,
         removeComments: true,
@@ -50,6 +50,9 @@ function getOutput(): string {
     expect(!!htmlContents).to.be.true;
     return htmlContents;
 }
+
+console.log('\nWEBPACK VERSION', webpack.version,'\n');
+console.log('\nHTML-WEBPACK_PLUGIN VERSION', HtmlWebpackPlugin.version,'\n');
 
 describe('WebpackNoModulePlugin Development Mode', () => {
 

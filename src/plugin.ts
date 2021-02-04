@@ -1,7 +1,7 @@
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as minimatch from 'minimatch';
 
-export type NoModuleConfig = {
+export interface NoModuleConfig {
     filePatterns: string[];
     // in case I want to add other optional configs later without breaking old uses
 }

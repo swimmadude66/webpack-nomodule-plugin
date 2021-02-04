@@ -1,6 +1,8 @@
 # Webpack Nomodule Plugin
 _Assigns the `nomodule` attribute to script tags injected by [Html Webpack Plugin](https://github.com/jantimon/html-webpack-plugin)_
 
+[![Build Status](https://travis-ci.org/swimmadude66/webpack-nomodule-plugin.svg?branch=master)](https://travis-ci.org/swimmadude66/webpack-nomodule-plugin)
+
 ## Configuration
 
 1. Install via `npm i -D webpack-nomodule-plugin`

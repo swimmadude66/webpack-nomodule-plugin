@@ -19,3 +19,13 @@ jobs:
       - run: npm install -D webpack@${{ matrix.webpack }} html-webpack-plugin@${{ matrix.html-webpack }}
       - run: npm run test
       - run: npm run build
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}

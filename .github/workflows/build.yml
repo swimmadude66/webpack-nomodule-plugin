@@ -1,0 +1,19 @@
+name: build-plugin
+on: [push, pull-request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        webpack: [5, 4]
+        html-webpack: [5, 4, 3]
+        exclude:
+          - webpack: 4
+            html-webpack: 5
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install
+      - run: npm install -D webpack@${{ matrix.webpack }} html-webpack-plugin@${{ matrix.html-webpack }}
+      - run: npm run test
+      - run: npm run build

@@ -1,5 +1,7 @@
-name: build-plugin
-on: [push, pull_request]
+name: deploy-plugin
+on:
+  release:
+    types: [released]
 jobs:
   build:
     runs-on: ubuntu-latest

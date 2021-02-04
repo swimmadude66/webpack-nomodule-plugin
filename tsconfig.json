@@ -11,6 +11,11 @@
       "outDir": "dist",
       "lib": [
         "es6"
+      ],
+      "types": [
+        "node",
+        "mocha",
+        "chai"
       ]
     },
     "exclude": [

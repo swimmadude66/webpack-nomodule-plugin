@@ -1,7 +1,11 @@
-name: build-plugin
-on: [push, pull_request]
+name: CI
+on:
+  push:
+  pull_request:
+  release:
+    - types: [released]
 jobs:
- build:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -17,3 +21,9 @@ jobs:
       - run: npm install -D webpack@${{ matrix.webpack }} html-webpack-plugin@${{ matrix.html-webpack }}
       - run: npm run test
       - run: npm run build
+  deploy:
+    if: github.event.action == 'released'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'inside deploy'

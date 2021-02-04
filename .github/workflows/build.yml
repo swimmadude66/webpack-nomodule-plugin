@@ -10,6 +10,8 @@ jobs:
         exclude:
           - webpack: 4
             html-webpack: 5
+          - webpack: 5
+            html-webpack: 3
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1

@@ -30,6 +30,7 @@ jobs:
         with:
           node-version: 16
       - run: npm install
+      - run: npm install -D webpack@5.74.0 html-webpack-plugin@5
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}

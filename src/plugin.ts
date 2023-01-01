@@ -60,6 +60,9 @@ export class WebpackNoModulePlugin {
                 const nomodule = this._config.filePatterns.some(pattern => minimatch(s.attributes.src, pattern));
                 if (nomodule) {
                     s.attributes.nomodule = true;
+                    if (s.attributes.type === 'module') {
+                        delete s.attributes.type;
+                    }
                 }
             }
             return s;

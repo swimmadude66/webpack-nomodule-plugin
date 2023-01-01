@@ -10,7 +10,7 @@ jobs:
         webpack: [4]
         html-webpack: [4, 3]
         include:
-          - webpack: 5
+          - webpack: 5.74.0
             html-webpack: 5
     steps:
       - uses: actions/checkout@v3

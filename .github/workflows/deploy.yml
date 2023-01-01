@@ -13,8 +13,11 @@ jobs:
           - webpack: 5
             html-webpack: 5
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
       - run: npm install
       - run: npm install -D webpack@${{ matrix.webpack }} html-webpack-plugin@${{ matrix.html-webpack }}
       - run: npm run test
